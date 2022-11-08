@@ -1,23 +1,160 @@
-<!-- ========================= FOOTER ========================= -->
-<footer class="section-footer border-top">
-	<div class="container">
-		<section class="footer-bottom border-top row">
-			<div class="col-md-2">
-				<p class="text-muted"> &copy 2019 Company name </p>
+{% load static %}
+<style>
+	.nav-link {
+		text-decoration: none;
+		color: black;
+}
+.nav-link:hover {
+		text-decoration: none;
+		font-weight: bold;
+		color: black;
+}
+.footer-hr {
+		width: 75%;
+		height: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: white;
+
+}
+.footer-links {
+		text-decoration: none;
+		color: white;
+}
+.footer-links:hover {
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+}
+.footer-link {
+	text-decoration: none;
+}
+.footer-link:hover {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+.footer-bar {
+		background-color: #181818;
+}
+#Nav {
+		background-color: #eeee;
+}
+#flex-card-row {
+	height: 11rem;
+}
+.ugly {
+		text-decoration: none;
+		color: black;
+		opacity: 0.5;
+		font-size: small;
+}
+.ugly:hover {
+		text-decoration: none;
+		color: black;
+		opacity: 0.75;
+}
+#search {
+		text-align: center;
+		margin-right: 5px;
+}
+.navbar-links {
+		text-decoration: none;
+		color: black;
+}
+.navbar-links:hover {
+		text-decoration: none;
+		font-weight: bold;
+		color: black;
+}
+.wfull {
+		width: 33%;
+		height: 45vh;
+		text-align: center;
+}
+.fanbook-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+</style>
+<footer class="footer-bar mt-5">
+	<div class="container py-5">
+			<a href="{% url 'home' %}" class="h2 navbar-links text-white"><img width="200px" class="img-fluid" src="{% static './images/Heading.png' %}"></a><br><br>
+			<div class="row py-3">
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">CUSTOMER SERVICE</h6>
+							<ul class="list-unstyled mb-0">
+									<li class="mb-2"><a href="#" class="footer-links">Contact Us</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">Track Order</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">Return Order</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">Cancel Order</a></li>
+							</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">COMPANY</h6>
+							<ul class="list-unstyled mb-0">
+									<li class="mb-2"><a href="#" class="footer-links">About Us</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">We're Hiring</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">Terms & Conditions</a></li>
+									<li class="mb-2"><a href="#" class="footer-links">Privacy Policy</a></li>
+							</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">CONNECT WITH US</h6>
+							<ul class="list-unstyled mb-0">
+									<li class="mb-2"><a href="#" class="footer-links"><i class="fab fa-facebook-square"></i> 4.7k People like this</a></li>
+									<li class="mb-2"><a href="#" class="footer-links"><i class="fab fa-instagram"></i>  100k Followers</a></li>
+							</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">KEEP UP TO DATE</h6>
+							<div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Enter email">
+									<div class="input-group-append"> <button class="btn btn-outline-warning btn-md" type="button">Subscribe</button> </div>
+							</div>
+					</div>
 			</div>
-			<div class="col-md-8 text-md-center">
-				<span  class="px-2">info@pixsellz.io</span>
-				<span  class="px-2">+879-332-9375</span>
-				<span  class="px-2">Street name 123, Avanue abc</span>
+
+			<div class="row py-3">
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<ul class="list-unstyled mb-0">
+									<li class="mb-2"><a href="#" class="footer-links"><i class="fas fa-undo-alt"></i> 15 Days return policy</a></li>
+									<li class="mb-2"><a href="#" class="footer-links"><i class="fas fa-money-bill-wave-alt"></i> Cash on delivery*</a></li>
+							</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+							<h6 class="text-uppercase font-weight-bold mb-2 text-warning">100% SECURE PAYMENT</h6>
+							<ul class="list-unstyled mb-0">
+									<li class="mb-2 text-white"><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-apple-pay"></i> <i class="fab fa-cc-paypal"></i> <i class="fab fa-cc-amazon-pay"></i></li>
+							</ul>
+					</div>
 			</div>
-			<div class="col-md-2 text-md-right text-muted">
-				<i class="fab fa-lg fa-cc-visa"></i>
-				<i class="fab fa-lg fa-cc-paypal"></i>
-				<i class="fab fa-lg fa-cc-mastercard"></i>
+	</div>
+	<hr class="footer-hr">
+	<div class="text-center mb-2 py-3">
+			<a href="#" class="footer-link h5" style="color: #51CCCC;">STORE</a>
+			<span class="h4 text-white">|</span>
+			<a href="#" class="footer-link h5" style="color: #51CCCC;">OFFERS</a>
+			<span class="h4 text-white">|</span>
+			<a href="#" class="footer-link h5" style="color: #51CCCC;">SITEMAP</a>
+	</div>
+	<div class="footer-bar my-2">
+			<div class="container text-center">
+					<p class="text-light mb-0 py-2">© 2022 PRAGAT PANDYA</p>
 			</div>
-		</section>
-	</div><!-- //container -->
+	</div>
 </footer>
+
+
+
+
+
+ 
+
+
+
+
+
 <!-- ========================= FOOTER END // ========================= -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

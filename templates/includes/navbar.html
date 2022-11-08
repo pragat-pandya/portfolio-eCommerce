@@ -12,10 +12,10 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item my-2 mx-2">
+      <li class="nav-item my-2 mr-1">
         <div class="category-wrap dropdown d-inline-block float-right">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-bars"></i> All category
+            <i class="fa fa-bars"></i> All categories
           </button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'store' %}">All Products </a>
@@ -25,10 +25,10 @@
           </div>
         </div>
       </li>
-      <li class="nav-item my-2 mx-1">
+      <li class="nav-item my-2 mr-1">
         <a href="{% url 'store' %}" class="btn btn-outline-primary float-right">Store</a>
       </li>
-      <li class="nav-item my-2 mx-1">
+      <li class="nav-item my-2 mr-1">
         <form action="{% url 'search' %}" class="search" method='GET'>
           <div class="input-group w-100">
               <input type="text" class="form-control mr-sm-2" style="width:60%;" placeholder="Search" name="keyword">
@@ -45,7 +45,7 @@
         
       </li>
     </ul>
-    <div class="d-lg-flex justify-content-end mb-3 mb-lg-0 d-sm-none d-md-none">
+    <div class="d-lg-flex justify-content-end mb-3 mb-lg-0 d-none">
       {% if user.id is None %}
       <div class="widget-header">
         <small class="title text-muted">Welcome guest!</small>
