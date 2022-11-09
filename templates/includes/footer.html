@@ -83,61 +83,61 @@
 			<a href="{% url 'home' %}" class="h2 navbar-links text-white"><img width="200px" class="img-fluid" src="{% static './images/Heading.png' %}"></a><br><br>
 			<div class="row py-3">
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">CUSTOMER SERVICE</h6>
-							<ul class="list-unstyled mb-0">
-									<li class="mb-2"><a href="#" class="footer-links">Contact Us</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">Track Order</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">Return Order</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">Cancel Order</a></li>
-							</ul>
+						<ul class="list-unstyled mb-0">
+								<li class="mb-2"><span class="text-white"><i class="fas fa-undo-alt"></i> 15 Days return policy</span></li>
+								<li class="mb-2"><span class="text-white"><i class="fas fa-money-bill-wave-alt"></i> Cash on delivery*</span></li>
+						</ul>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
 							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">COMPANY</h6>
 							<ul class="list-unstyled mb-0">
-									<li class="mb-2"><a href="#" class="footer-links">About Us</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">We're Hiring</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">Terms & Conditions</a></li>
-									<li class="mb-2"><a href="#" class="footer-links">Privacy Policy</a></li>
+									<li class="mb-2"><a href="{% url 'contact' %}" class="footer-links">Contact Us</a></li>
+									<li class="mb-2"><a href="{%  url 'about' %}" class="footer-links">About Us</a></li>
+									<li class="mb-2"><a href="{% url 'terms' %}" class="footer-links">Terms & Conditions</a></li>
+									<li class="mb-2"><a href="{% url 'privacy' %}" class="footer-links">Privacy Policy</a></li>
 							</ul>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
 							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">CONNECT WITH US</h6>
 							<ul class="list-unstyled mb-0">
-									<li class="mb-2"><a href="#" class="footer-links"><i class="fab fa-facebook-square"></i> 4.7k People like this</a></li>
-									<li class="mb-2"><a href="#" class="footer-links"><i class="fab fa-instagram"></i>  100k Followers</a></li>
+									<li class="mb-2"><a href="https://www.facebook.com/pragat.pandya.10/" target="_blank" class="footer-links"><i class="fab fa-facebook-square"></i> 4.7k People like this</a></li>
+									<li class="mb-2"><a href="https://www.instagram.com/_web_nomad_._/" target="_blank" class="footer-links"><i class="fab fa-instagram"></i>  100k Followers</a></li>
 							</ul>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
 							<h6 class="text-uppercase font-weight-bold mb-4 text-warning">KEEP UP TO DATE</h6>
-							<div class="input-group mb-3"> <input type="text" class="form-control input-text" placeholder="Enter email">
-									<div class="input-group-append"> <button class="btn btn-outline-warning btn-md" type="button">Subscribe</button> </div>
+							<form action="{% url 'news' %}" method="POST">
+								{% csrf_token %}
+							<div class="input-group mb-3"> 
+									
+										<input type="text" name="email" class="form-control input-text" placeholder="Enter email">
+										<div class="input-group-append"> 
+											<button class="btn btn-outline-warning btn-md" type="submit">Subscribe</button> 
+										</div>
+									
 							</div>
+						</form>
+						<ul class="messages bg-light">
+							{% for message in messages %}
+							<li{% if message.tags %} class="text-{{ message.tags }}"{% endif %}>
+									{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+									{{ message }}
+							</li>
+							{% endfor %}
+						</ul>
 					</div>
 			</div>
 
-			<div class="row py-3">
-					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+			<div class="py-3 text-center">
+					<div class="text-center">
+							<h5 class="text-uppercase font-weight-bold mb-2 text-warning">100% SECURE PAYMENT</h5>
 							<ul class="list-unstyled mb-0">
-									<li class="mb-2"><a href="#" class="footer-links"><i class="fas fa-undo-alt"></i> 15 Days return policy</a></li>
-									<li class="mb-2"><a href="#" class="footer-links"><i class="fas fa-money-bill-wave-alt"></i> Cash on delivery*</a></li>
-							</ul>
-					</div>
-					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-							<h6 class="text-uppercase font-weight-bold mb-2 text-warning">100% SECURE PAYMENT</h6>
-							<ul class="list-unstyled mb-0">
-									<li class="mb-2 text-white"><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-apple-pay"></i> <i class="fab fa-cc-paypal"></i> <i class="fab fa-cc-amazon-pay"></i></li>
+									<li class="mb-1 text-white h4"><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-apple-pay"></i> <i class="fab fa-cc-paypal"></i> <i class="fab fa-cc-amazon-pay"></i></li>
 							</ul>
 					</div>
 			</div>
 	</div>
 	<hr class="footer-hr">
-	<div class="text-center mb-2 py-3">
-			<a href="#" class="footer-link h5" style="color: #51CCCC;">STORE</a>
-			<span class="h4 text-white">|</span>
-			<a href="#" class="footer-link h5" style="color: #51CCCC;">OFFERS</a>
-			<span class="h4 text-white">|</span>
-			<a href="#" class="footer-link h5" style="color: #51CCCC;">SITEMAP</a>
-	</div>
 	<div class="footer-bar my-2">
 			<div class="container text-center">
 					<p class="text-light mb-0 py-2">© 2022 PRAGAT PANDYA</p>

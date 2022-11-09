@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  <img src="{% static './images/contact_us.jpg' %}" alt="background image" style="height: 80vh;" class="img-fluid w-100">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <iframe id="contact_map" class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3706.9797447638402!2d72.12179901532788!3d21.70351118563673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f57414289983b%3A0xf295d6b8d9e2fa2c!2sShantilal%20Shah%20Engineering%20College!5e0!3m2!1sen!2sin!4v1644673851221!5m2!1sen!2sin" style="border:0;" allowfullscreen="true" loading="lazy" height="500" width="500" scrolling="no" ></iframe>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center bg-white">
+      <div class="mt-lg-5 text-center">
+        <div class="text-left">
+          <h3 class="text-dark mt-5">Meet Us</h3>
+          <p class="lead mt-3">
+            <a href="tel:8160705706" class="text-dark">
+              <i class="fa fa-phone mr-3"></i>+918160705706
+            </a>
+          </p>
+          <p class="lead">
+            <a href="mailto:pragat.pandya@gmail.com" class="text-dark">
+              <i class="fa fa-envelope mr-3"></i>support@fashionmafia.store
+            </a>
+          </p>
+          <p class="lead mt-3">
+            <a href="mailto:support@smartgardening.com" class="text-dark" disabled>
+              <i class="fas fa-map-marker-alt mr-3"></i>Bhavnagar 364001
+            </a>
+          </p>
+        </div>
+        <div class="text-left mt-5 p-2">
+          <a href="{% url 'about' %}" class="btn btn-outline-success mb-2">Read more about us</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 bg-light">
+      <div class="mt-lg-5 text-center">
+        <div class="text-left">
+          <h3 class="text-dark mt-5">Pitch Us</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputAddress">First Name</label>
+                <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress">Last Name</label>
+                <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Query / Message</label>
+              <input type="textarea" class="form-control" id="inputMessage" placeholder="I would like to ....">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Organization</label>
+                <input type="text" class="form-control" id="inputOrg">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Country</label>
+                <input type="text" class="form-control" id="inputCountry" placeholder="eg., India">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Subscribe newsletter
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -14,3 +14,15 @@ def home(request):
         'reviews': reviews,
     }
     return render(request, 'home.html', context)
+
+def about(request):
+    return render (request, 'aboutUs.html')
+
+def contact (request):
+    return render (request, 'contactUs.html')
+
+def terms (request):
+    return render (request, 'terms.html')
+
+def privacy (request):
+    return render (request, 'privacy.html')

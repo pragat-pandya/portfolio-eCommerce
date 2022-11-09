@@ -22,10 +22,15 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('securelogin/', admin.site.urls),
+    path('aboutUs/', views.about, name="about"),
+    path('contactUs/', views.contact, name="contact"),
+    path('terms&conditions/', views.terms, name="terms"),
+    path('privacyPolicy/', views.privacy, name="privacy"),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),
+    path('newsletter/', include('newsletter.urls')),
 
     # ORDERS
     path('orders/', include('orders.urls')),

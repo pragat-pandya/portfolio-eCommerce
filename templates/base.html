@@ -46,7 +46,9 @@ $(document).ready(function() {
 });
 // jquery end
 </script>
-
+<style>
+{% block style %}{% endblock %}
+</style>
 
 </head>
 <body>
@@ -55,7 +57,14 @@ $(document).ready(function() {
   {% include 'includes/navbar.html' %}
 
   {% block content %}
-  <!-- content -->
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+  </ul>
   {% endblock %}
 
 
